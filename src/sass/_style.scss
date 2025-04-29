@@ -2,11 +2,12 @@ $withe: #ffffff;
 $orange: #ff7300;
 $gray: #999999;
 $black: #000;
-$font: 'Arial', sans-serif;
+$font-title: 'Margarine', cursive;
+$font-body: 'Instrument Sans', sans-serif;
 
 body {
   margin: 0;
-  font-family: $font;
+  font-family: $font-body;
   background: $gray;
 }
 
@@ -31,6 +32,7 @@ body {
     color: $orange;
     font-size: 48px;
     font-weight: bold;
+    font-family: $font-title;
     letter-spacing: 2px;
   }
 }
@@ -55,6 +57,7 @@ body {
 
   &__title {
     font-size: 48px;
+    font-family: $font-title;
   }
 
   &__text {
@@ -93,6 +96,7 @@ body {
   }
   .hero__title {
     font-size: 36px;
+    font-family: $font-title;
   }
 }
 
@@ -106,6 +110,7 @@ body {
 
   .hero__title {
     font-size: 28px;
+    font-family: $font-title;
   }
 
   .intro__stats {
@@ -122,6 +127,7 @@ body {
     color: $orange;
     font-size: 48px;
     margin-bottom: 40px;
+    font-family: $font-title;
   }
 
   &__content {
@@ -180,6 +186,7 @@ body {
 
   .coin-system__title {
     font-size: 24px;
+    font-family: $font-title;
   }
 
   .step {
@@ -189,314 +196,281 @@ body {
   }
 }
 
-.cards {
+.features-advanced {
   background: $black;
+
+  color: $withe;
 
   &__grid {
     display: flex;
-    flex-wrap: wrap;
     gap: 40px;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
   }
 
-  .card {
-    background: #111;
+  .feature-icon {
+    background: #141414;
     border-radius: 20px;
-
-    flex: 1 1 calc(50% - 20px);
-    box-sizing: border-box;
+    padding: 20px;
+    width: 260px;
+    height: 330px;
 
     img {
-      width: 480px;
-      border-radius: 20px;
+      width: 200px;
+      height: 200px;
       margin-bottom: 20px;
     }
 
-    &__title {
-      font-size: 32px;
-      margin-bottom: 10px;
+    h3 {
       color: $withe;
+      font-size: 18px;
+      margin-bottom: 8px;
     }
 
-    &__desc {
-      font-size: 20px;
-      color: #ccc;
-      line-height: 1.5;
-    }
-  }
-}
-
-@media (max-width: 1199px) {
-  .cards {
-    .card {
-      img {
-        width: 360px;
-      }
+    p {
+      color: #999;
+      font-size: 14px;
     }
   }
 }
 
-@media (max-width: 809px) {
-  .cards__grid {
-    flex-direction: column;
-  }
-
-  .card {
-    flex: 1 1 100%;
-  }
-}
-
-.reviews {
+.roadmap-status {
   background: $black;
 
   color: $withe;
 
   &__grid {
     display: flex;
-    flex-wrap: wrap;
     gap: 40px;
+    flex-wrap: wrap;
     justify-content: space-between;
   }
 
-  .review {
-    position: relative;
-    padding: 60px 30px 40px;
-    flex: 1 1 calc(50% - 20px);
+  .status-card {
     background: #141414;
-    padding: 40px 30px;
     border-radius: 20px;
-    text-align: center;
+    padding: 30px;
+    flex: 1 1 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; // добавлено
+    height: 400px; // нужно для выравнивания|
+    width: 320px;
 
-    &__emoji {
-      position: absolute;
-      top: -40px;
-      left: 50%;
-      transform: translateX(-50%);
-      font-size: 60px;
+    h4 {
+      font-size: 14px;
+      color: #aaa;
+      margin-bottom: 10px;
     }
 
-    &__text {
-      font-size: 20px;
-      line-height: 1.5;
+    h3 {
+      font-size: 26px;
+      font-weight: 600;
       margin-bottom: 20px;
-      color: #fff;
     }
 
-    &__source {
-      font-size: 16px;
-      color: #999;
+    ul {
+      padding-left: 20px;
+      list-style-type: '✓ ';
+      color: #ccc;
+
+      li {
+        margin-bottom: 10px;
+        font-size: 15px;
+      }
+    }
+
+    .status-btn {
+      background: $orange;
+      margin-top: 30px;
+      padding: 12px 24px;
+      border: none;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: bold;
+      color: $black;
+      cursor: default;
     }
   }
 }
 
 @media (max-width: 809px) {
-  .reviews__grid {
+  .features-advanced__grid,
+  .roadmap-status__grid {
     flex-direction: column;
+    align-items: center;
   }
 
-  .review {
+  .feature-icon,
+  .status-card {
     flex: 1 1 100%;
+    max-width: 400px;
   }
 }
 
-.roadmap {
+.roadmap-stages {
   background: $gray;
 
-  &__wrapper {
-    display: flex;
+  color: $black;
 
-    gap: 40px;
-    flex-wrap: wrap;
-  }
-
-  &__left,
-  &__right {
-    flex: 1 1 45%;
-  }
-
-  h3 {
-    font-size: 20px;
+  &__title {
+    font-size: 28px;
     margin-bottom: 40px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-family: $font-title;
   }
 
-  p {
-    padding-top: 10px;
-    font-size: 20px;
-    color: #333;
+  &__table {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
   }
 
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  .stage {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px solid #999;
+    padding-bottom: 20px;
 
-    li {
-      display: flex;
-      justify-content: space-between;
-      border-bottom: 1px solid #ccc;
-      padding: 10px 0;
-
-      span {
-        font-weight: normal;
-        font-size: 20px;
-      }
-
-      strong {
-        font-weight: bold;
-        font-size: 20px;
-      }
+    &__quarter {
+      flex: 1 1 20%;
+      font-weight: bold;
+      font-size: 18px;
     }
-  }
-}
 
-@media (max-width: 1199px) {
-  .roadmap {
-    &__wrapper {
-      flex-direction: column;
+    &__content {
+      flex: 1 1 75%;
+
+      p {
+        font-size: 16px;
+        margin-bottom: 10px;
+      }
+
+      ul {
+        margin: 0;
+        padding-left: 20px;
+
+        li {
+          font-size: 16px;
+          margin-bottom: 6px;
+        }
+      }
     }
   }
 }
 
 @media (max-width: 809px) {
-  .roadmap__wrapper {
+  .stage {
     flex-direction: column;
-  }
 
-  .roadmap__left,
-  .roadmap__right {
-    flex: 1 1 100%;
+    &__quarter {
+      margin-bottom: 10px;
+    }
   }
 }
 
-.cta {
+.get-cointracking {
   background: $black;
   color: $withe;
-  padding: 100px 0;
+
   text-align: center;
 
   &__title {
     color: $orange;
-    font-size: 48px;
-    margin-bottom: 20px;
+    font-size: 36px;
+    margin-bottom: 60px;
+    font-family: $font-title;
   }
 
-  &__text {
-    font-size: 20px;
-    max-width: 800px;
-    margin: 0 auto 30px;
-    color: #ddd;
-    line-height: 1.6;
+  &__grid {
+    display: flex;
+    justify-content: center;
+    gap: 80px;
+    flex-wrap: nowrap;
   }
 
-  &__button {
-    background: #444;
-    color: $withe;
-    padding: 14px 32px;
-    border-radius: 10px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background 0.3s;
+  &__item {
+    flex: 1 1 300px;
+    max-width: 360px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
 
-    &:hover {
-      background: #666;
+    img {
+      width: 180px;
+      height: 180px;
+      object-fit: contain;
+      margin-bottom: 20px;
+      align-self: center;
+    }
+
+    h3 {
+      color: $orange;
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #ccc;
+      font-size: 16px;
+      line-height: 1.6;
     }
   }
 }
 
 @media (max-width: 809px) {
-  .cta {
-    &__title {
-      font-size: 32px;
-    }
+  .get-cointracking__grid {
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+  }
 
-    &__text {
-      font-size: 16px;
-      padding: 0 10px;
-    }
-
-    &__button {
-      font-size: 14px;
-      padding: 12px 24px;
-    }
+  .get-cointracking__item {
+    max-width: 100%;
   }
 }
 
 .footer {
   background: $black;
-  font-size: 16px;
+  color: $orange;
 
-  a {
-    color: $orange;
-    text-decoration: none;
+  text-align: center;
 
-    &:hover {
-      text-decoration: underline;
-    }
+  &__badge {
+    height: 50px;
+    margin-bottom: 30px;
   }
 
-  h4 {
-    color: $withe;
-    font-size: 18px;
-    margin-bottom: 16px;
+  &__line {
+    border: none;
+    border-top: 1px solid #333;
+    width: 100%;
+    margin: 30px auto;
   }
 
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-
-    li {
-      margin-bottom: 8px;
-    }
-  }
-
-  &__top {
+  &__socials {
     display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
-  }
-
-  &__column {
-    min-width: 200px;
-  }
-
-  &__divider {
-    border: 0;
-    border-top: 1px solid #222;
-    margin: 0 auto 30px;
-  }
-
-  &__bottom {
-    text-align: center;
-  }
-
-  &__icons {
-    font-size: 24px;
+    justify-content: center;
+    gap: 30px;
+    font-size: 22px;
     margin-bottom: 20px;
 
-    span {
-      margin: 0 10px;
-      display: inline-block;
+    a {
+      color: $orange;
+      transition: 0.3s ease;
+
+      &:hover {
+        opacity: 0.7;
+      }
     }
   }
 
   &__copyright {
     font-size: 14px;
-    color: #666;
-  }
-}
-
-@media (max-width: 809px) {
-  .footer {
-    &__top {
-      flex-direction: column;
-      gap: 30px;
-    }
-
-    &__icons {
-      font-size: 20px;
-    }
+    color: $orange;
+    margin: 0;
   }
 }
